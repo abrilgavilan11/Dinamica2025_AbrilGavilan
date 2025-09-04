@@ -1,0 +1,22 @@
+form {
+  width: 350px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+}
+label {
+  display: block;
+  margin-top: 10px;
+}
+input[type="text"],
+input[type="number"] {
+  width: 98%;
+  padding: 5px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+button {
+  margin-top: 10px;
+  padding: 5px 15px;
+}
