@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/../../../../controller/tp1/1var_numero.php';
+    include_once __DIR__ . '/../../../../controller/tp1/1var_numero.php';
 
     $objNum = new varNumero();
     $message = $objNum->ejercicio1();
