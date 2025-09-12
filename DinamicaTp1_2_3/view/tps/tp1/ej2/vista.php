@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Horas de cursada</title>
-    <link rel="stylesheet" href="/DinamicaTp1_2_3/view/css/ej2.css">
+    <link rel="stylesheet" href="/DinamicaTp1_2_3/view/css/styles.css">
     <script>
         function validarFormulario() {
             const dias = ["lunes", "martes", "miercoles", "jueves", "viernes"];
@@ -34,6 +34,8 @@
     </script>
 </head>
 <body>
+    <?php include_once __DIR__ . '/../../../estructura/header.php'; ?>
+
     <h1>Horas de cursada de Programación Web Dinámica</h1>
     <form action="ejercicio2.php" method="post" onsubmit="return validarFormulario();">
         <label for="lunes">Lunes:</label>
@@ -53,6 +55,8 @@
 
         <input type="submit" value="Calcular total de horas">
     </form>
+
+    <?php include_once __DIR__ . '/../../../estructura/footer.php'; ?>
 
     <?php if ($resultado !== ""): ?>
         <div class="resultado">

@@ -1,15 +1,5 @@
 <?php
-    define('ROOT_PATH', dirname(__DIR__, 2));
-    include_once ROOT_PATH . '/controller/encapsulamiento/encapsulado.php';
-
-    /* Obtiene un número enviado por el usuario (ya sea por método POST o GET)
-    usando la función encapsuladorDeMetodos().
-    
-    Evalua ese número de la siguiente manera:
-    *   Si es mayor que 0 → devuelve "Positivo".
-    *   Si es igual a 0 → devuelve "Cero".
-    *   Si es menor que 0 → devuelve "Negativo".
-    *   Si no se recibió ningún número → devuelve "No se encontró número".*/
+    include_once __DIR__ . '/../encapsulamiento/encapsulado.php';
     
     class varNumero{
         public function ejercicio1(){

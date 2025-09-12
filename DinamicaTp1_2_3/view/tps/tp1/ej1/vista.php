@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Ejercicio 1</title>
-    <link rel="stylesheet" href="/DinamicaTp1_2_3/view/css/ej1.css">
+    <link rel="stylesheet" href="/DinamicaTp1_2_3/view/css/styles.css">
     <script>
         function validarFormulario() {
             const numero = document.getElementById("num").value;
@@ -31,12 +31,16 @@
     </script>
 </head>
 <body>
+    <?php include_once __DIR__ . '/../../../estructura/header.php'; ?>
+
     <h1>Ejercicio 1 - Ingresar un número</h1>
     <form action="ejercicio1.php" method="post" onsubmit="return validarFormulario();">
         <label for="num">Ingrese un número:</label>
         <input type="number" id="num" name="num" required step="any" />
         <input type="submit" value="Enviar" />
     </form>
+    
+    <?php include_once __DIR__ . '/../../../estructura/footer.php'; ?>
 
     <?php if ($resultado !== ""): ?>
         <div class="resultado">
