@@ -28,11 +28,12 @@
 </head>
 <body>
     <?php include_once __DIR__ . '/../../../estructura/header.php'; ?>
+    
+    <h2>Ejercicio 3 - Datos personales</h2>
 
     <div class="container">
         <!-- Formulario POST -->
         <div class="card">
-            <h2>Formulario con POST</h2>
             <form action="/DinamicaTp1_2_3/view/tps/tp1/ej3/ejercicio3post.php" method="post" onsubmit="return validarFormulario('post');">
                 <label for="nombre_post">Nombre:</label>
                 <input type="text" id="nombre_post" name="nombre" required maxlength="50">

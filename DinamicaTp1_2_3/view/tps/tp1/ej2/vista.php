@@ -36,26 +36,30 @@
 <body>
     <?php include_once __DIR__ . '/../../../estructura/header.php'; ?>
 
-    <h1>Horas de cursada de Programación Web Dinámica</h1>
-    <form action="ejercicio2.php" method="post" onsubmit="return validarFormulario();">
-        <label for="lunes">Lunes:</label>
-        <input type="number" id="lunes" name="lunes" min="0" required><br><br>
+    <h2>Horas de cursada de Programación Web Dinámica</h2>
 
-        <label for="martes">Martes:</label>
-        <input type="number" id="martes" name="martes" min="0" required><br><br>
+    <div class="container">
+        <div class="card">
+            <form action="ejercicio2.php" method="post" onsubmit="return validarFormulario();">
+                <label for="lunes">Lunes:</label>
+                <input type="number" id="lunes" name="lunes" min="0" required><br><br>
 
-        <label for="miercoles">Miércoles:</label>
-        <input type="number" id="miercoles" name="miercoles" min="0" required><br><br>
+                <label for="martes">Martes:</label>
+                <input type="number" id="martes" name="martes" min="0" required><br><br>
 
-        <label for="jueves">Jueves:</label>
-        <input type="number" id="jueves" name="jueves" min="0" required><br><br>
+                <label for="miercoles">Miércoles:</label>
+                <input type="number" id="miercoles" name="miercoles" min="0" required><br><br>
 
-        <label for="viernes">Viernes:</label>
-        <input type="number" id="viernes" name="viernes" min="0" required><br><br>
+                <label for="jueves">Jueves:</label>
+                <input type="number" id="jueves" name="jueves" min="0" required><br><br>
 
-        <input type="submit" value="Calcular total de horas">
-    </form>
+                <label for="viernes">Viernes:</label>
+                <input type="number" id="viernes" name="viernes" min="0" required><br><br>
 
+                <input type="submit" value="Calcular total de horas">
+            </form>
+        </div>
+    </div>
     <?php include_once __DIR__ . '/../../../estructura/footer.php'; ?>
 
     <?php if ($resultado !== ""): ?>
