@@ -33,11 +33,10 @@
 <body>
     <?php include_once __DIR__ . '/../../../estructura/header.php'; ?>
 
-    <h1>Ejercicio 8 - Valor de entradas</h1>
+    <h2>Ejercicio 8 - Valor de entradas</h2>
 
     <div class="container">
         <div class="card">
-            <h2>Formulario con POST</h2>
             <form action="ejercicio8.php" method="post" onsubmit="return validarFormulario();">
                 <label for="edad">Edad:</label>
                 <input type="number" name="edad" min="0" required>

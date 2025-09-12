@@ -34,11 +34,10 @@
 <body>
     <?php include_once __DIR__ . '/../../../estructura/header.php'; ?>
 
-    <h1>Ejercicio 5 - Estudios y sexo</h1>
+    <h2>Ejercicio 5 - Estudios y sexo</h2>
 
     <div class="container">
         <div class="card">
-            <h2>Formulario con POST</h2>
             <form action="ejercicio6.php" method="post" onsubmit="return validarFormulario();">
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" required>

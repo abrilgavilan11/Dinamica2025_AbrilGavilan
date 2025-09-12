@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo 8 - Resolución de Ejercicios</title>
-    <link rel="stylesheet" href="/DinamicaTp1_2_3/view/css/estilo.css">
+    <link rel="stylesheet" href="/DinamicaTp1_2_3/view/css/styles.css">
 </head>
 <body>
     <?php include_once __DIR__ . '/estructura/header.php'; ?>

@@ -45,11 +45,10 @@
 <body>
     <?php include_once __DIR__ . '/../../../estructura/header.php'; ?>
 
-    <h1>Ejercicio 7 - Calculadora simple</h1>
+    <h2>Ejercicio 7 - Calculadora simple</h2>
 
     <div class="container">
         <div class="card">
-            <h2>Formulario con POST</h2>
             <form action="ejercicio7.php" method="post" onsubmit="return validarFormulario();">
                 <label for="number1">Primer número:</label>
                 <input type="text" name="number1" required>
