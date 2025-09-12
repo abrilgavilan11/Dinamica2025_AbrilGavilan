@@ -1,8 +1,9 @@
 <?php
-    include_once __DIR__ . '/../../../../controller/tp1/2cant_horas_semana.php';
+    include_once __DIR__ . '/../../../../controller/encapsulamiento/encapsulado.php';
+    include_once __DIR__ . '/../../../../controller/tp1/8val_entradas.php';
 
-    $obj = new CantidadHorasSemana();
-    $horasTotales = $obj->horas();
+    $obj = new val_entradas();
+    $resultado = $obj->ejercicio8();
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +17,10 @@
     <?php include_once __DIR__ . '/../../../estructura/header.php'; ?>
 
     <h1>Resultado</h1>
-    <p><?php echo $horasTotales; ?> horas totales registradas</p>
+    <p><?php echo $resultado; ?></p>
 
     <div class="links">
-        <a href="/DinamicaTp1_2_3/view/tps/tp1/ej2/vista.php">Volver al formulario</a>
+        <a href="/DinamicaTp1_2_3/view/tps/tp1/ej8/vista.php">Volver al formulario</a>
         <a href="/DinamicaTp1_2_3/view/index.php">Inicio</a>
     </div>
 
