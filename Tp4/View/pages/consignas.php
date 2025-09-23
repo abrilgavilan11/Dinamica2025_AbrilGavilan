@@ -1,9 +1,20 @@
+<?php
+include_once '../../configuracion.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>TP4 - Grupo 8</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+  </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -15,8 +26,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="../Tp4/View/pages/consignas.php">Consignas</a></li>
-            <li class="nav-item"><a class="nav-link" href="../Tp4/View/pages/test.php">Test</a></li>
+            <li class="nav-item"><a class="nav-link" href="consignas.php">Consignas</a></li>
+            <li class="nav-item"><a class="nav-link" href="test.php">Test</a></li>
         </ul>
         </div>
     </div>
@@ -24,15 +35,16 @@
 
     <!--Main -->
     <main class="container text-center" style="margin-top: 100px;">
-        <h1 class="display-4 text-primary">Trabajo Práctico Nº4 - PHP & MySQL</h1>
-        <p class="lead mt-4">Este trabajo consistió en desarrollar un sistema web que permita gestionar autos y personas utilizando programación orientada a objetos, acceso a base de datos con PDO, y arquitectura MVC.</p>
+        <div class="container mt-5">
+            <h2 class="text-center text-primary mb-4">Consignas del Trabajo Práctico 4</h2>
 
-        <div class="card mt-5 mx-auto" style="max-width: 500px;">
-        <div class="card-body">
-            <h5 class="card-title">Resolución del TP Nº4</h5>
-            <p class="card-text">Accedé a los ejercicios resueltos del trabajo práctico.</p>
-            <a href="./View/pages/resolucion_acts.php" class="btn btn-primary">Ver resolución</a>
-        </div>
+            <div class="mb-4">
+                <iframe src="../../Util/TP4_PHPMySQL.pdf"></iframe>
+            </div>
+
+            <div class="text-center">
+                <a href="../../index.php" class="btn btn-secondary">Volver al inicio</a>
+            </div>
         </div>
     </main>
 
