@@ -1,18 +1,18 @@
 <?php
-include_once '../../../configuracion.php';
-include_once '../../../controller/controller_persona.php';
-include_once '../../../util/funciones.php';
+  include_once(__DIR__ . '../../../../configuracion.php');
+  include_once(__DIR__ . '../../../../Controller/controller_persona.php');
+  include_once(__DIR__ . '../../../../Util/funciones.php');
 
-$datos = data_submitted();
-$objAbmPersona = new AbmPersona();
-$persona = null;
+  $datos = data_submitted();
+  $objAbmPersona = new AbmPersona();
+  $persona = null;
 
-if (isset($datos['NroDni'])) {
+  if (isset($datos['NroDni'])) {
     $lista = $objAbmPersona->buscar($datos);
     if (count($lista) == 1) {
-        $persona = $lista[0];
+      $persona = $lista[0];
     }
-}
+  }
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ if (isset($datos['NroDni'])) {
 <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../../index.php">Grupo 8</a>
+      <a class="navbar-brand" href="../../../index.php">Grupo 8</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -81,21 +81,24 @@ if (isset($datos['NroDni'])) {
       <div class="text-center mt-4">
         <a href="persona_buscar.php" class="btn btn-secondary">Buscar otra persona</a>
       </div>
+      <div class="text-center mt-4">
+        <a href="../../../index.php" class="btn btn-secondary">Volver al inicio</a>
+      </div>
     </div>
   </main>
 
 <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <div class="container">
-      <h5>Integrantes del Grupo 8</h5>
-        <ul class="list-unstyled mb-3">
-          <li>Abril Gavilan - Legajo: 12345 - abril.gavilan@mail.com</li>
-            <li>Lucas San Segundo - Legajo: 67890 - lucas.sansegundo@mail.com</li>
-            <li>Joaquín Castillo - Legajo: 54321 - joaquin.castillo@mail.com</li>
-        </ul>
-        <small>TP4 PHP & MySQL | Facultad de Informática</small>
-    </div>
-  </footer>
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <h5>Integrantes del Grupo 8</h5>
+            <ul class="list-unstyled mb-3">
+                <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI- - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI- - joaquin.castillo@est.fi.uncoma.edu.ar</li>
+            </ul>
+            <small>TP4 PHP & MySQL | Facultad de Informática</small>
+        </div>
+    </footer>
     
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
