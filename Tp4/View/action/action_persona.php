@@ -93,20 +93,20 @@ include_once(__DIR__ . '/../../Util/funciones.php');
         <h2 class="text-center text-primary mb-4">Resultado del Registro</h2>
         <div class="alert alert-info text-center"><?= $mensaje ?></div>
         <div class="text-center mt-4">
-            <a href="./persona/persona_nuevo.php" class="btn btn-success">Registrar otra persona</a>
-            <a href="../../../index.php" class="btn btn-secondary">Volver al inicio</a>
+            <a href="../action/persona/persona_nuevo.php" class="btn btn-success">Registrar otra persona</a>
+            <a href="../../index.php" class="btn btn-secondary">Volver al inicio</a>
         </div>
         </div>
     </main>
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
-        <h5>Integrantes del Grupo 8</h5>
+            <h5>Integrantes del Grupo 8</h5>
             <ul class="list-unstyled mb-3">
-            <li>Abril Gavilan - Legajo: 12345 - abril.gavilan@mail.com</li>
-                <li>Lucas San Segundo - Legajo: 67890 - lucas.sansegundo@mail.com</li>
-                <li>Joaquín Castillo - Legajo: 54321 - joaquin.castillo@mail.com</li>
+                <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI- - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI- - joaquin.castillo@est.fi.uncoma.edu.ar</li>
             </ul>
             <small>TP4 PHP & MySQL | Facultad de Informática</small>
         </div>

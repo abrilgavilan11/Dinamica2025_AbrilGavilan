@@ -1,9 +1,8 @@
 <?php
-include_once(__DIR__ . '/../../../configuracion.php');
-include_once(__DIR__ . '/../../../Controller/controller_auto.php');
-include_once(__DIR__ . '/../../../Util/funciones.php');
-include_once(__DIR__ . '/../../../Model/auto.php');
-
+  include_once(__DIR__ . '../../../../configuracion.php');
+  include_once(__DIR__ . '../../../../Controller/controller_auto.php');
+  include_once(__DIR__ . '../../../../Util/funciones.php');
+  include_once(__DIR__ . '../../../../Model/auto.php');
 
   $datos = data_submitted();
   $objAbmAuto = new AbmAuto();
@@ -75,21 +74,24 @@ include_once(__DIR__ . '/../../../Model/auto.php');
       <div class="text-center mt-4">
         <a href="auto_buscar_editar.php" class="btn btn-secondary">Buscar otro auto</a>
       </div>
+      <div class="text-center mt-4">
+        <a href="../../../index.php" class="btn btn-secondary">Volver al inicio</a>
+      </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <div class="container">
-      <h5>Integrantes del Grupo 8</h5>
-        <ul class="list-unstyled mb-3">
-          <li>Abril Gavilan - Legajo: 12345 - abril.gavilan@mail.com</li>
-            <li>Lucas San Segundo - Legajo: 67890 - lucas.sansegundo@mail.com</li>
-            <li>Joaquín Castillo - Legajo: 54321 - joaquin.castillo@mail.com</li>
-        </ul>
-        <small>TP4 PHP & MySQL | Facultad de Informática</small>
-    </div>
-  </footer>
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <h5>Integrantes del Grupo 8</h5>
+            <ul class="list-unstyled mb-3">
+                <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI- - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI- - joaquin.castillo@est.fi.uncoma.edu.ar</li>
+            </ul>
+            <small>TP4 PHP & MySQL | Facultad de Informática</small>
+        </div>
+    </footer>
     
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

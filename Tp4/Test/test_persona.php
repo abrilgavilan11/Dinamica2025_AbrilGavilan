@@ -16,14 +16,14 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../../index.php">Grupo 8</a>
+            <a class="navbar-brand" href="../index.php">Grupo 8</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="consignas.php">Consignas</a></li>
-                <li class="nav-item"><a class="nav-link" href="test.php">Test</a></li>
+                <li class="nav-item"><a class="nav-link" href="../View/pages/consignas.php">Consignas</a></li>
+                <li class="nav-item"><a class="nav-link" href="../View/pages/test.php">Test</a></li>
             </ul>
             </div>
         </div>
@@ -33,9 +33,9 @@
     <main class="container text-center" style="margin-top: 100px;">
         <div class="container mt-5">
             <?php
-                include_once '../configuracion.php';
-                include_once '../Controller/controller_persona.php';
-                include_once '../Util/funciones.php';
+                include_once (__DIR__ . '../../configuracion.php');
+                include_once (__DIR__ . '../../Controller/controller_persona.php');
+                include_once (__DIR__ . '../../Util/funciones.php');
 
                 echo "<br>----------------------------------------------------------------------------------<br><br>";
                 echo "<h3>TEST DE PERSONA</h3>";
@@ -117,9 +117,9 @@
         <div class="container">
             <h5>Integrantes del Grupo 8</h5>
             <ul class="list-unstyled mb-3">
-                <li>Abril Gavilan - Legajo: 12345 - abril.gavilan@mail.com</li>
-                <li>Lucas San Segundo - Legajo: 67890 - lucas.sansegundo@mail.com</li>
-                <li>Joaquín Castillo - Legajo: 54321 - joaquin.castillo@mail.com</li>
+                <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI- - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI- - joaquin.castillo@est.fi.uncoma.edu.ar</li>
             </ul>
             <small>TP4 PHP & MySQL | Facultad de Informática</small>
         </div>
