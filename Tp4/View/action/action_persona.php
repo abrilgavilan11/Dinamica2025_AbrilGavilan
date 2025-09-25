@@ -99,14 +99,14 @@ include_once(__DIR__ . '/../../Util/funciones.php');
         </div>
     </main>
 
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <h5>Integrantes del Grupo 8</h5>
             <ul class="list-unstyled mb-3">
                 <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
-                <li>Lucas San Segundo - Legajo: FAI- - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
-                <li>Joaquín Castillo - Legajo: FAI- - joaquin.castillo@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI-1921 - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI-5521 - joaquin.castillo@est.fi.uncoma.edu.ar</li>
             </ul>
             <small>TP4 PHP & MySQL | Facultad de Informática</small>
         </div>

@@ -41,9 +41,9 @@
         <div class="container">
             <h5>Integrantes del Grupo 8</h5>
             <ul class="list-unstyled mb-3">
-                <li>Abril Gavilan - Legajo: 12345 - abril.gavilan@mail.com</li>
-                <li>Lucas San Segundo - Legajo: 67890 - lucas.sansegundo@mail.com</li>
-                <li>Joaquín Castillo - Legajo: 54321 - joaquin.castillo@mail.com</li>
+                <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI-1921 - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI-5521 - joaquin.castillo@est.fi.uncoma.edu.ar</li>
             </ul>
             <small>TP4 PHP & MySQL | Facultad de Informática</small>
         </div>

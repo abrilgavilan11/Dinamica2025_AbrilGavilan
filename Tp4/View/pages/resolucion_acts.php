@@ -30,7 +30,7 @@
             <div class="col-md-5">
                 <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Formularios de Auto 🚗</h4>
+                    <h4 class="mb-0">Formularios de Auto</h4>
                 </div>
                 <div class="card-body d-grid gap-2">
                     <?php
@@ -56,7 +56,7 @@
             <div class="col-md-5">
                 <div class="card shadow-sm">
                 <div class="card-header bg-success text-white">
-                    <h4 class="mb-0">Formularios de Persona 👤</h4>
+                    <h4 class="mb-0">Formularios de Persona</h4>
                 </div>
                 <div class="card-body d-grid gap-2">
                     <?php
@@ -85,9 +85,9 @@
         <div class="container">
             <h5>Integrantes del Grupo 8</h5>
             <ul class="list-unstyled mb-3">
-                <li>Abril Gavilan - Legajo: 12345 - abril.gavilan@mail.com</li>
-                <li>Lucas San Segundo - Legajo: 67890 - lucas.sansegundo@mail.com</li>
-                <li>Joaquín Castillo - Legajo: 54321 - joaquin.castillo@mail.com</li>
+                <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI-1921 - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI-5521 - joaquin.castillo@est.fi.uncoma.edu.ar</li>
             </ul>
             <small>TP4 PHP & MySQL | Facultad de Informática</small>
         </div>
