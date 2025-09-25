@@ -1,3 +1,84 @@
+<?php
+    include_once (__DIR__ . '../../configuracion.php');
+    include_once (__DIR__ . '../../Controller/controller_persona.php');
+    include_once (__DIR__ . '../../Util/funciones.php');
+
+    echo "<br>----------------------------------------------------------------------------------<br><br>";
+    echo "<h3>TEST DE PERSONA</h3>";
+    echo "<br>----------------------------------------------------------------------------------<br>";
+
+    $objPersona = new Persona();
+    $objPersona->setear(
+        '45678901',
+        'Fernández',
+        'Lucía',
+        '1995-08-14',
+        '2994567890',
+        'Av. Argentina 1234'
+    );
+
+    ///////////////////////////////
+    ///    PROBANDO INSERTAR   ///
+    /////////////////////////////
+    
+    if ($objPersona->insertar()) {
+        echo "<br>Persona insertada correctamente.";
+        verEstructura($objPersona);
+    } else {
+        echo "<br>Error al insertar: " . $objPersona->getMensajeOperacion();
+    }
+
+    echo "<br>----------------------------------------------------------------------------------<br>";
+
+    ///////////////////////////////
+    ///    PROBANDO MODIFICAR   ///
+    /////////////////////////////
+    
+    $objPersona->setNombre("NombreModificado");
+    $objPersona->setApellido("ApellidoModificado");
+
+    if ($objPersona->modificar()) {
+        echo "<br>Persona modificada correctamente.";
+        verEstructura($objPersona);
+    } else {
+        echo "<br>Error al modificar: " . $objPersona->getMensajeOperacion();
+    }
+
+    echo "<br>----------------------------------------------------------------------------------<br>";
+
+    ///////////////////////////////
+    ///    PROBANDO ELIMINAR   ///
+    /////////////////////////////
+
+    if ($objPersona->eliminar()) {
+        echo "<br>Persona eliminada correctamente.";
+        verEstructura($objPersona);
+    } else {
+        echo "<br>Error al eliminar: " . $objPersona->getMensajeOperacion();
+    }
+
+    echo "<br>----------------------------------------------------------------------------------<br>";
+
+    ///////////////////////////////
+    ///    PROBANDO SELECT   ///
+    /////////////////////////////
+    
+    $objAbmPersona = new AbmPersona();
+    $lista = $objAbmPersona->buscar(null);
+
+    if (count($lista) > 0) {
+        echo "<br>Se encontraron " . count($lista) . " personas:";
+        foreach ($lista as $p) {
+            echo "<pre>";
+            print_r($p);
+            echo "</pre>";
+        }
+    } else {
+        echo "<br>No se encontraron personas.";
+    }
+
+    echo "<br>----------------------------------------------------------------------------------<br>";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,97 +110,14 @@
         </div>
     </nav>
 
-    <!--Main -->
-    <main class="container text-center" style="margin-top: 100px;">
-        <div class="container mt-5">
-            <?php
-                include_once (__DIR__ . '../../configuracion.php');
-                include_once (__DIR__ . '../../Controller/controller_persona.php');
-                include_once (__DIR__ . '../../Util/funciones.php');
-
-                echo "<br>----------------------------------------------------------------------------------<br><br>";
-                echo "<h3>TEST DE PERSONA</h3>";
-                echo "<br>----------------------------------------------------------------------------------<br>";
-
-                $objPersona = new Persona();
-                $objPersona->setear(
-                    '45678901',
-                    'Fernández',
-                    'Lucía',
-                    '1995-08-14',
-                    '2994567890',
-                    'Av. Argentina 1234'
-                );
-
-                ///////////////////////////////
-                ///    PROBANDO INSERTAR   ///
-                /////////////////////////////
-                if ($objPersona->insertar()) {
-                    echo "<br>Persona insertada correctamente.";
-                    verEstructura($objPersona);
-                } else {
-                    echo "<br>Error al insertar: " . $objPersona->getMensajeOperacion();
-                }
-
-                echo "<br>----------------------------------------------------------------------------------<br>";
-
-                ///////////////////////////////
-                ///    PROBANDO MODIFICAR   ///
-                /////////////////////////////
-                $objPersona->setNombre("NombreModificado");
-                $objPersona->setApellido("ApellidoModificado");
-
-                if ($objPersona->modificar()) {
-                    echo "<br>Persona modificada correctamente.";
-                    verEstructura($objPersona);
-                } else {
-                    echo "<br>Error al modificar: " . $objPersona->getMensajeOperacion();
-                }
-
-                echo "<br>----------------------------------------------------------------------------------<br>";
-
-                ///////////////////////////////
-                ///    PROBANDO ELIMINAR   ///
-                /////////////////////////////
-                if ($objPersona->eliminar()) {
-                    echo "<br>Persona eliminada correctamente.";
-                    verEstructura($objPersona);
-                } else {
-                    echo "<br>Error al eliminar: " . $objPersona->getMensajeOperacion();
-                }
-
-                echo "<br>----------------------------------------------------------------------------------<br>";
-
-                ///////////////////////////////
-                ///    PROBANDO SELECT   ///
-                /////////////////////////////
-                $objAbmPersona = new AbmPersona();
-                $lista = $objAbmPersona->buscar(null);
-
-                if (count($lista) > 0) {
-                    echo "<br>Se encontraron " . count($lista) . " personas:";
-                    foreach ($lista as $p) {
-                        echo "<pre>";
-                        print_r($p);
-                        echo "</pre>";
-                    }
-                } else {
-                    echo "<br>No se encontraron personas.";
-                }
-
-                echo "<br>----------------------------------------------------------------------------------<br>";
-            ?>
-        </div>
-    </main>
-
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <h5>Integrantes del Grupo 8</h5>
             <ul class="list-unstyled mb-3">
                 <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
-                <li>Lucas San Segundo - Legajo: FAI- - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
-                <li>Joaquín Castillo - Legajo: FAI- - joaquin.castillo@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI-1921 - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI-5521 - joaquin.castillo@est.fi.uncoma.edu.ar</li>
             </ul>
             <small>TP4 PHP & MySQL | Facultad de Informática</small>
         </div>

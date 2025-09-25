@@ -1,3 +1,76 @@
+<?php
+    include_once (__DIR__ . '../../configuracion.php');
+    include_once (__DIR__ . '../../Controller/controller_persona.php');
+    include_once (__DIR__ . '../../Controller/controller_auto.php');
+    include_once (__DIR__ . '../../Util/funciones.php');
+
+    echo "<br>----------------------------------------------------------------------------------<br><br>";
+    echo "<h3>TEST DE AUTO</h3>";
+    echo "<br>----------------------------------------------------------------------------------<br>";
+
+    $objAuto = new Auto();
+    $objAuto->setear('AB 054 NX', 'Renault', '2017', '46404056');
+
+    ///////////////////////////////
+    ///    PROBANDO INSERTAR   ///
+    /////////////////////////////
+    if ($objAuto->insertar()) {
+        echo "<br>Auto insertado correctamente.";
+        verEstructura($objAuto);
+    } else {
+        echo "<br>Error al insertar: " . $objAuto->getMensajeOperacion();
+    }
+
+    echo "<br>----------------------------------------------------------------------------------<br>";
+
+    ///////////////////////////////
+    ///    PROBANDO MODIFICAR   ///
+    /////////////////////////////
+    
+    $objAuto->setMarca("MarcaModificada");
+    $objAuto->setModelo("ModeloModificado");
+
+    if ($objAuto->modificar()) {
+        echo "<br>Auto modificado correctamente.";
+        verEstructura($objAuto);
+    } else {
+        echo "<br>Error al modificar: " . $objAuto->getMensajeOperacion();
+    }
+
+    echo "<br>----------------------------------------------------------------------------------<br>";
+
+    ///////////////////////////////
+    ///    PROBANDO ELIMINAR   ///
+    /////////////////////////////
+    if ($objAuto->eliminar()) {
+        echo "<br>Auto eliminado correctamente.";
+        verEstructura($objAuto);
+    } else {
+        echo "<br>Error al eliminar: " . $objAuto->getMensajeOperacion();
+    }
+
+    echo "<br>----------------------------------------------------------------------------------<br>";
+
+    ///////////////////////////////
+    ///    PROBANDO SELECT   ///
+    /////////////////////////////
+    $objAbmAuto = new AbmAuto();
+    $lista = $objAbmAuto->buscar(null);
+
+    if (count($lista) > 0) {
+        echo "<br>Se encontraron " . count($lista) . " autos:";
+        foreach ($lista as $a) {
+            echo "<pre>";
+            print_r($a);
+            echo "</pre>";
+        }
+    } else {
+        echo "<br>No se encontraron autos.";
+    }
+
+    echo "<br>----------------------------------------------------------------------------------<br>";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,92 +102,14 @@
         </div>
     </nav>
 
-    <!--Main -->
-    <main class="container text-center" style="margin-top: 100px;">
-        <div class="container mt-5">
-            <?php
-                include_once (__DIR__ . '../../configuracion.php');
-                include_once (__DIR__ . '../../Controller/controller_persona.php');
-                include_once (__DIR__ . '../../Controller/controller_auto.php');
-                include_once (__DIR__ . '../../Util/funciones.php');
-
-                echo "<br>----------------------------------------------------------------------------------<br><br>";
-                echo "<h3>TEST DE AUTO</h3>";
-                echo "<br>----------------------------------------------------------------------------------<br>";
-
-                $objAuto = new Auto();
-                $objAuto->setear('AB 054 NX', 'Renault', '2017', '46404056');
-
-                ///////////////////////////////
-                ///    PROBANDO INSERTAR   ///
-                /////////////////////////////
-                if ($objAuto->insertar()) {
-                    echo "<br>Auto insertado correctamente.";
-                    verEstructura($objAuto);
-                } else {
-                    echo "<br>Error al insertar: " . $objAuto->getMensajeOperacion();
-                }
-
-                echo "<br>----------------------------------------------------------------------------------<br>";
-
-                ///////////////////////////////
-                ///    PROBANDO MODIFICAR   ///
-                /////////////////////////////
-                $objAuto->setMarca("MarcaModificada");
-                $objAuto->setModelo("ModeloModificado");
-
-                if ($objAuto->modificar()) {
-                    echo "<br>Auto modificado correctamente.";
-                    verEstructura($objAuto);
-                } else {
-                    echo "<br>Error al modificar: " . $objAuto->getMensajeOperacion();
-                }
-
-                echo "<br>----------------------------------------------------------------------------------<br>";
-
-                ///////////////////////////////
-                ///    PROBANDO ELIMINAR   ///
-                /////////////////////////////
-                if ($objAuto->eliminar()) {
-                    echo "<br>Auto eliminado correctamente.";
-                    verEstructura($objAuto);
-                } else {
-                    echo "<br>Error al eliminar: " . $objAuto->getMensajeOperacion();
-                }
-
-                echo "<br>----------------------------------------------------------------------------------<br>";
-
-                ///////////////////////////////
-                ///    PROBANDO SELECT   ///
-                /////////////////////////////
-                $objAbmAuto = new AbmAuto();
-                $lista = $objAbmAuto->buscar(null);
-
-                if (count($lista) > 0) {
-                    echo "<br>Se encontraron " . count($lista) . " autos:";
-                    foreach ($lista as $a) {
-                        echo "<pre>";
-                        print_r($a);
-                        echo "</pre>";
-                    }
-                } else {
-                    echo "<br>No se encontraron autos.";
-                }
-
-                echo "<br>----------------------------------------------------------------------------------<br>";
-                ?>
-        </div>
-    </main>
-
-
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <h5>Integrantes del Grupo 8</h5>
             <ul class="list-unstyled mb-3">
                 <li>Abril Gavilan - Legajo: FAI-5163 - abril.gavilan@est.fi.uncoma.edu.ar</li>
-                <li>Lucas San Segundo - Legajo: FAI- - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
-                <li>Joaquín Castillo - Legajo: FAI- - joaquin.castillo@est.fi.uncoma.edu.ar</li>
+                <li>Lucas San Segundo - Legajo: FAI-1921 - lucas.sansegundo@est.fi.uncoma.edu.ar</li>
+                <li>Joaquín Castillo - Legajo: FAI-5521 - joaquin.castillo@est.fi.uncoma.edu.ar</li>
             </ul>
             <small>TP4 PHP & MySQL | Facultad de Informática</small>
         </div>
