@@ -4,11 +4,14 @@
   "type": "project",
   "require": {
     "php": ">=7.4",
-    "endroid/qr-code": "^5.0"
+    "endroid/qr-code": "^5.0",
+    "google/cloud-dialogflow": "^2.2"
   },
   "autoload": {
     "psr-4": {
       "App\\": "src/"
     }
   }
+
+    
 }
