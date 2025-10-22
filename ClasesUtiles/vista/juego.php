@@ -1,9 +1,20 @@
 <?php
 include_once('../configuracion.php');
+
 $BASE_URL = "http://" . $_SERVER['HTTP_HOST'] . "/qr-payment-system";
 include_once('./estructura/header.php');
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivineitor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+
+<body>
 <div class="main-container">
     <div class="container">
         <div class="row justify-content-center">
@@ -60,3 +71,7 @@ function volverSinDescuento() {
 </script>
 
 <?php include_once('./estructura/footer.php'); ?>
+
+</body>
+
+</html>
