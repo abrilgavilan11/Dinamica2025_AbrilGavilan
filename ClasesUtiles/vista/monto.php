@@ -56,9 +56,11 @@ include_once('./estructura/header.php');
 </div>
 
 <script>
-// Verificar que existan datos del cliente
+// Verificar que el usuario haya ingresado sus datos primero
 window.addEventListener('DOMContentLoaded', function() {
     const clienteData = ClienteData.obtenerDatosCliente();
+    
+    // Si no hay datos del cliente, redirigir al inicio
     if (!clienteData) {
         mostrarAlerta('Debe ingresar sus datos primero', 'warning');
         setTimeout(() => {
@@ -67,21 +69,23 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Manejar el envío del formulario
 document.getElementById('formMonto').addEventListener('submit', function(e) {
     e.preventDefault();
     
+    // Validar el monto usando la función de main.js
     if (validarMonto()) {
         const monto = document.getElementById('monto').value.trim();
         
-        // Guardar en localStorage
+        // Guardar el monto en el navegador
         ClienteData.guardarMonto(monto);
         
-        // Redirigir a la página de resumen
+        // Ir a la página de resumen
         window.location.href = 'resumen.php';
     }
 });
 
-// Formatear el input mientras se escribe
+// Formatear el monto cuando el usuario termine de escribir
 document.getElementById('monto').addEventListener('blur', function() {
     if (this.value) {
         this.value = parseFloat(this.value).toFixed(2);
