@@ -3,7 +3,10 @@ include_once('../configuracion.php');
 $titulo = 'Pagar con QR';
 $BASE_URL = "http://" . $_SERVER['HTTP_HOST'] . "/qr-payment-system";
 include_once('./estructura/header.php');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
+
 
 <div class="main-container">
     <div class="container">

@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <i class="fas fa-qrcode me-2"></i>
                 Sistema de Pago QR
             </a>

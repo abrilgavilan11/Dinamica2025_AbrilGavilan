@@ -1,6 +1,6 @@
 <?php
-include_once '../funciones/dialog.php';
-include_once '../funciones/bot.php';
+include_once '../control/ia/funciones/dialog.php';
+include_once '../control/ia/funciones/bot.php';
 $ia = new Dialog();
 $obj = new Bot();
 if (!isset($_SESSION['historial'])) {
