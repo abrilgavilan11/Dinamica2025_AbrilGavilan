@@ -63,9 +63,9 @@ include_once('./estructura/header.php');
                                 <i class="fas fa-arrow-left me-2"></i>
                                 Volver al Resumen
                             </a>
-                            <button class="btn btn-outline-danger" onclick="cancelarPago()">
+                            <button class="btn btn-outline-danger" onclick="volverAlInicio()">
                                 <i class="fas fa-times me-2"></i>
-                                Cancelar Pago
+                                Volver al Inicio
                             </button>
                         </div>
                     </div>
@@ -179,10 +179,10 @@ function descargarQR() {
 }
 
 /**
- * Cancela el pago y vuelve al inicio
+ * Vuelve al inicio
  */
-function cancelarPago() {
-    if (confirm('¿Está seguro que desea cancelar el pago?')) {
+function volverAlInicio() {
+    if (confirm('¿Está seguro que desea volver al inicio?')) {
         ClienteData.limpiarDatos();
         window.location.href = './index.php';
     }
