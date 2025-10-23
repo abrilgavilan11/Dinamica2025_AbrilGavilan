@@ -5,7 +5,7 @@ $ia = new Dialog();
 $obj = new Bot();
 if (!isset($_SESSION['historial'])) {
     $_SESSION['historial'] = [];
-    //Bandera para que no se repuita el codigo
+    //Bandera para que no se repita el codigo
     $_SESSION['iniciador'] = false;
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -1,12 +1,16 @@
 <?php
 include_once('../configuracion.php');
+
+// Indicar que la respuesta será en formato JSON
 header('Content-Type: application/json');
 
-// Obtener referencia del pago
+// Obtener la referencia del pago desde la URL
 $referencia = $_GET['ref'] ?? '';
 
+// Preparar la respuesta
 $respuesta = [];
 
+// Verificar que se haya proporcionado una referencia
 if (empty($referencia)) {
     $respuesta = [
         'success' => false,
@@ -16,6 +20,7 @@ if (empty($referencia)) {
     $pagoCompletado = (rand(0, 1) === 1);
     
     if ($pagoCompletado) {
+        // El pago fue procesado exitosamente
         $respuesta = [
             'success' => true,
             'estado' => 'completado',
@@ -24,6 +29,7 @@ if (empty($referencia)) {
             'fecha' => date('Y-m-d H:i:s')
         ];
     } else {
+        // El pago aún está pendiente
         $respuesta = [
             'success' => true,
             'estado' => 'pendiente',
@@ -33,6 +39,7 @@ if (empty($referencia)) {
     }
 }
 
+// Enviar la respuesta en formato JSON
 echo json_encode($respuesta);
 exit;
 ?>

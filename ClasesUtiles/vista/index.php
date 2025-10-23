@@ -76,22 +76,23 @@ include_once('./estructura/header.php');
 </div>
 
 <script>
+// Manejar el envío del formulario
 document.getElementById('formCliente').addEventListener('submit', function(e) {
     e.preventDefault();
     
+    // Validar el formulario usando la función de main.js
     if (validarFormularioCliente()) {
         const nombre = document.getElementById('nombre').value.trim();
         const apellido = document.getElementById('apellido').value.trim();
         const dni = document.getElementById('dni').value.trim();
         
-        // Guardar en localStorage
+        // Guardar datos en el navegador
         ClienteData.guardarDatosCliente(nombre, apellido, dni);
         
-        // Redirigir a la página de monto
+        // Ir a la página de monto
         window.location.href = './monto.php';
     }
 });
-
 </script>
 
 <?php include_once('./estructura/footer.php'); ?>

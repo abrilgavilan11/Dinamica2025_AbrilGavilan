@@ -3,10 +3,7 @@ include_once('../configuracion.php');
 $titulo = 'Pagar con QR';
 $BASE_URL = "http://" . $_SERVER['HTTP_HOST'] . "/qr-payment-system";
 include_once('./estructura/header.php');
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 ?>
-
 
 <div class="main-container">
     <div class="container">
@@ -20,7 +17,7 @@ ini_set('display_errors', 1);
                         </h2>
 
                         <div class="qr-container">
-                            <!-- Integración del código QR -->
+                            <!-- Contenedor del código QR -->
                             <div id="qr-code-container" class="text-center mb-4">
                                 <div class="spinner-border text-primary" role="status">
                                     <span class="visually-hidden">Generando QR...</span>
@@ -28,12 +25,13 @@ ini_set('display_errors', 1);
                                 <p class="mt-2">Generando código QR...</p>
                             </div>
 
+                            <!-- Total a pagar -->
                             <div class="mb-3 text-center">
                                 <h5>Total a Pagar:</h5>
                                 <h3 class="text-success" id="total-pagar"></h3>
                             </div>
 
-                            <!-- Información adicional del pago -->
+                            <!-- Información del pago -->
                             <div class="alert alert-info alert-custom">
                                 <div class="resumen-item">
                                     <span><i class="fas fa-user me-2"></i>Cliente:</span>
@@ -55,6 +53,7 @@ ini_set('display_errors', 1);
                             </p>
                         </div>
 
+                        <!-- Botones de acción -->
                         <div class="d-grid gap-2 mt-4">
                             <button class="btn btn-custom-success" onclick="descargarQR()">
                                 <i class="fas fa-download me-2"></i>
@@ -77,17 +76,16 @@ ini_set('display_errors', 1);
 </div>
 
 <script>
+// Variable para guardar la URL del QR
 let qrImageUrl = '';
 
+// Cargar la página de pago
 window.addEventListener('DOMContentLoaded', function() {
-    console.log('Cargando página de pago...');
-    
     const clienteData = ClienteData.obtenerDatosCliente();
     const monto = ClienteData.obtenerMonto();
     const descuento = ClienteData.obtenerDescuento();
 
-    console.log('Datos obtenidos:', { clienteData, monto, descuento });
-
+    // Verificar que existan todos los datos necesarios
     if (!clienteData || !monto) {
         mostrarAlerta('Faltan datos. Redirigiendo...', 'warning');
         setTimeout(() => {
@@ -96,12 +94,15 @@ window.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Mostrar información del pago
+    // Calcular el monto final con descuento
     const montoFinal = ClienteData.calcularMontoFinal();
+    
+    // Mostrar información del pago
     document.getElementById('total-pagar').textContent = formatearMoneda(montoFinal);
     document.getElementById('info-cliente').textContent = `${clienteData.nombre} ${clienteData.apellido}`;
     document.getElementById('info-dni').textContent = clienteData.dni;
 
+    // Mostrar descuento si existe
     if (descuento > 0) {
         document.getElementById('info-descuento-row').style.display = 'flex';
         document.getElementById('info-descuento').textContent = `-${descuento}%`;
@@ -111,10 +112,11 @@ window.addEventListener('DOMContentLoaded', function() {
     generarCodigoQR(clienteData, montoFinal, descuento);
 });
 
+/**
+ * Genera el código QR con los datos del pago
+ */
 function generarCodigoQR(clienteData, monto, descuento) {
-    console.log('Generando código QR...');
-    
-    // Construir la URL para generar el QR
+    // Crear los parámetros para la URL del QR
     const params = new URLSearchParams({
         monto: monto,
         dni: clienteData.dni,
@@ -122,24 +124,26 @@ function generarCodigoQR(clienteData, monto, descuento) {
         descuento: descuento
     });
 
+    // Construir la URL completa
     qrImageUrl = `../control/generarQR.php?${params.toString()}`;
     
-    console.log('URL del QR:', qrImageUrl);
-
-    // Crear la imagen del QR
-    const qrContainer = document.getElementById('qr-code-container');
-    
+    // Agregar timestamp para evitar caché
     const timestamp = new Date().getTime();
+    
+    // Mostrar la imagen del QR
+    const qrContainer = document.getElementById('qr-code-container');
     qrContainer.innerHTML = `
         <img src="${qrImageUrl}&t=${timestamp}" 
              alt="Código QR de Pago" 
              class="img-fluid qr-image"
              style="max-width: 300px; border: 3px solid #28a745; border-radius: 10px; padding: 10px; background: white;"
-             onload="console.log('QR cargado exitosamente')"
-             onerror="console.error('Error al cargar QR'); mostrarErrorQR()">
+             onerror="mostrarErrorQR()">
     `;
 }
 
+/**
+ * Muestra un mensaje de error si el QR no se puede cargar
+ */
 function mostrarErrorQR() {
     const qrContainer = document.getElementById('qr-code-container');
     qrContainer.innerHTML = `
@@ -154,6 +158,9 @@ function mostrarErrorQR() {
     `;
 }
 
+/**
+ * Descarga el código QR como imagen
+ */
 function descargarQR() {
     if (!qrImageUrl) {
         mostrarAlerta('El código QR aún no está listo', 'warning');
@@ -171,6 +178,9 @@ function descargarQR() {
     mostrarAlerta('Descargando código QR...', 'success');
 }
 
+/**
+ * Cancela el pago y vuelve al inicio
+ */
 function cancelarPago() {
     if (confirm('¿Está seguro que desea cancelar el pago?')) {
         ClienteData.limpiarDatos();

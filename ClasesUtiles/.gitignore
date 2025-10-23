@@ -2,6 +2,13 @@
 /vendor/
 composer.lock
 
+# Archivos sensibles
+*credenciales.json
+*.key
+*.pem
+*.crt
+*.p12
+
 # Environment files
 .env
 .env.local
