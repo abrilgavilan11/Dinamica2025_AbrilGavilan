@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirigir todo a public/index.php excepto archivos y directorios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php [QSA,L]
+
+# Proteger carpetas y archivos sensibles
+<FilesMatch "^(composer\.(json|lock)|\.env|\.git|database\.sql|README\.md)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Denegar acceso directo a carpetas sensibles
+<IfModule mod_rewrite.c>
+    RewriteRule ^app/ - [F,L]
+    RewriteRule ^config/ - [F,L]
+    RewriteRule ^vendor/ - [F,L]
+</IfModule>
+

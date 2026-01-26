@@ -1,0 +1,29 @@
+# Dependencias
+/vendor/
+
+# Archivos de configuración sensibles
+/config/database.php
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.cache
+
+# Archivos antiguos del proyecto estático (opcional - descomentar si quieres ignorarlos)
+# /css/
+# /js/
+# /img/
+# *.html
+
